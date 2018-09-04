@@ -56,7 +56,6 @@ export default class App extends Component {
 			averages: averages
 		};
 
-		console.log("theData :", theData);
 		return theData;
 	}
 
@@ -76,6 +75,7 @@ export default class App extends Component {
 					cityData: arr
 				});
 			})
+			//handle this error
 			.catch(err => {
 				console.log("err :", err);
 			});
