@@ -55,7 +55,6 @@ export default class App extends Component {
 			humidities: humidities,
 			averages: averages
 		};
-
 		return theData;
 	}
 
@@ -68,11 +67,14 @@ export default class App extends Component {
 			.get(url)
 			.then(data => {
 				const latestCityData = this.organiseCityData(data.data);
+				//this needs to improve
 				const arr = [latestCityData];
-				arr.concat(arr.concat(this.state.cityData));
+				const finalArr = arr.concat(this.state.cityData);
+
+				console.log("The state array of city data :", finalArr);
 
 				this.setState({
-					cityData: arr
+					cityData: finalArr
 				});
 			})
 			//handle this error
