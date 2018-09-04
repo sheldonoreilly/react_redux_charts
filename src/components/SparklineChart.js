@@ -8,7 +8,10 @@ export default props => {
 		<div>
 			<Sparklines height={40} width={60} data={props.data}>
 				<SparklinesLine color="red" />
+				<SparklinesReferenceLine type="avg" />
 			</Sparklines>
+			<div>Average temperature (C): {props.average}</div>
 		</div>
 	);
 };
+//{"Celisus"}
