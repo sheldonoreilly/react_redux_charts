@@ -20,8 +20,8 @@ export default props => {
 					<tr>
 						<th>City</th>
 						<th>Temperature (C) </th>
-						<th>Pressure</th>
-						<th>Humidity</th>
+						<th>Pressure (hPa)</th>
+						<th>Humidity (%)</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -40,13 +40,25 @@ function renderCharts(cityData) {
 		<tr>
 			<td>{cityData.name}</td>
 			<td>
-				<SparkLineChart data={cityData.temps} average={cityData.averages[0].toFixed(2)} />
+				<SparkLineChart
+					data={cityData.temps}
+					units={"Temperature (C)"}
+					average={cityData.averages[0].toFixed(2)}
+				/>
 			</td>
 			<td>
-				<SparkLineChart data={cityData.pressures} average={cityData.averages[1].toFixed(2)} />
+				<SparkLineChart
+					data={cityData.pressures}
+					units={"Pressure (hPa)"}
+					average={cityData.averages[1].toFixed(2)}
+				/>
 			</td>
 			<td>
-				<SparkLineChart data={cityData.humidities} average={cityData.averages[2].toFixed(2)} />
+				<SparkLineChart
+					data={cityData.humidities}
+					units={"Humidity (%)"}
+					average={cityData.averages[2].toFixed(2)}
+				/>
 			</td>
 		</tr>
 	);

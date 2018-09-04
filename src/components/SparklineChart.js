@@ -10,7 +10,7 @@ export default props => {
 				<SparklinesLine color="red" />
 				<SparklinesReferenceLine type="avg" />
 			</Sparklines>
-			<div>Average temperature (C): {props.average}</div>
+			<div>{`Average ${props.units} : ${props.average}`}</div>
 		</div>
 	);
 };
