@@ -3,7 +3,8 @@ const path = require("path");
 module.exports = {
 	entry: "./src/index.js",
 	output: {
-		path: path.join(__dirname, "public", "dist"),
+		path: __dirname,
+		publicPath: "/",
 		filename: "bundle.js"
 	},
 	mode: "none",
@@ -18,7 +19,7 @@ module.exports = {
 	},
 	devtool: "inline-cheap-module-source-map",
 	devServer: {
-		contentBase: path.join(__dirname, "public"),
+		contentBase: "./",
 		watchContentBase: true,
 		publicPath: "/dist/"
 	}

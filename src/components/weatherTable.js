@@ -31,7 +31,7 @@ export default props => {
 
 function renderCharts(cityData) {
 	return (
-		<tr>
+		<tr key={cityData.name}>
 			<td>{cityData.name}</td>
 			<td>
 				<SparkLineChart
