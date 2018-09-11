@@ -8,10 +8,10 @@
 		"dev-server": "webpack-dev-server"
 	},
 	"keywords": [
+		"babel",
+		"webpack",
 		"react",
-		"redux",
 		"react-sparkline",
-		"google maps",
 		"axios"
 	],
 	"author": "Sheldon O'Reilly",
@@ -30,8 +30,6 @@
 		"axios": "^0.18.0",
 		"react": "^16.4.2",
 		"react-dom": "^16.4.2",
-		"react-redux": "^5.0.7",
-		"redux": "^4.0.0",
 		"react-sparklines": "^1.7.0"
 	}
 }

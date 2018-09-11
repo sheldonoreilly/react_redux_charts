@@ -2,8 +2,6 @@ import React from "react";
 import { Sparklines, SparklinesLine, SparklinesReferenceLine } from "react-sparklines";
 
 export default props => {
-	console.log("props :", props);
-
 	return (
 		<div>
 			<Sparklines height={200} width={200} data={props.data}>

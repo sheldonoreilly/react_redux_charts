@@ -5,13 +5,8 @@ import SparkLineChart from "./SparklineChart";
 /* Constructs a simple table that displays a row container a google map and three sparkline chart components (weather data) for each given city. */
 
 export default props => {
-	console.log("the data is recieved: ", props.cityStateData);
-
 	//if no data - return an empty div
-	if (props.cityStateData.length === 0) return <div />;
-
-	// const cityName = props.cityStateData[0].name;
-	// const avgTemp = Math.floor(props.cityStateData[0].averages[0]);
+	if (props.cityStateData.length === 0) return <h3>Please choose your city.</h3>;
 
 	return (
 		<div>
@@ -35,7 +30,6 @@ export default props => {
 };
 
 function renderCharts(cityData) {
-	console.log("render charts ", cityData);
 	return (
 		<tr>
 			<td>{cityData.name}</td>
@@ -63,5 +57,3 @@ function renderCharts(cityData) {
 		</tr>
 	);
 }
-
-// <tbody>{renderCharts(props.cityStateData[0])}</tbody>

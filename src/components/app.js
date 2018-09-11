@@ -2,11 +2,10 @@ import React, { Component } from "react";
 import SearchBar from "./searchbar";
 import axios from "axios";
 import WeatherTable from "./weatherTable";
-
-const API_KEY = "9487cec2b7c38c8aee52f9cc5401f440";
+import { WEATHER_API_KEY } from "../keys";
 
 export const FETCH_WEATHER = "FETCH_WEATHER";
-export const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
+export const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${WEATHER_API_KEY}`;
 
 export default class App extends Component {
 	constructor(props) {
@@ -48,8 +47,10 @@ export default class App extends Component {
 			);
 		});
 
+		//improve
 		const theData = {
 			name: data.city.name,
+			coord: data.city.coord,
 			temps: temps,
 			pressures: pressures,
 			humidities: humidities,
@@ -59,7 +60,6 @@ export default class App extends Component {
 	}
 
 	handleSearchSubmit() {
-		console.log("handleSearchSubmit");
 		const city = this.searchTerm;
 		//do the weather search
 		const url = `${ROOT_URL}&q=${city},us`;
@@ -71,8 +71,6 @@ export default class App extends Component {
 				const arr = [latestCityData];
 				const finalArr = arr.concat(this.state.cityData);
 
-				console.log("The state array of city data :", finalArr);
-
 				this.setState({
 					cityData: finalArr
 				});
@@ -81,7 +79,6 @@ export default class App extends Component {
 			.catch(err => {
 				console.log("err :", err);
 			});
-		// this.setState({ term: this.searchTerm });
 	}
 
 	handleSearchChange(e) {
@@ -89,7 +86,6 @@ export default class App extends Component {
 	}
 
 	render() {
-		console.log("app render");
 		return (
 			<div>
 				<SearchBar handleSearchChange={this.handleSearchChange} handleSearchSubmit={this.handleSearchSubmit} />

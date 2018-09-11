@@ -14,7 +14,7 @@ export default class SearchBar extends Component {
 	render() {
 		return (
 			//using form gives a submit on Enter key press.
-			<form onSubmit={this.formSubmitted}>
+			<form className="input-group" onSubmit={this.formSubmitted}>
 				<input type="text" onChange={this.props.handleSearchChange} placeholder="Search NA cites..." />
 				<button type="submit">Submit</button>
 			</form>
