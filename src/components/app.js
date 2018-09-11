@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import SearchBar from "./searchbar";
 import axios from "axios";
 import WeatherTable from "./weatherTable";
-import { WEATHER_API_KEY } from "../keys";
+const keys = require("../config/keys");
 
 export const FETCH_WEATHER = "FETCH_WEATHER";
-export const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${WEATHER_API_KEY}`;
+export const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${keys.WEATHER_API_KEY}`;
 
 export default class App extends Component {
 	constructor(props) {
